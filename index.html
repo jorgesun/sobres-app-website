@@ -3,228 +3,822 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidad — Sobres</title>
+  <title>Sobres — Presupuesto Personal para iPhone</title>
+  <meta name="description" content="Sobres es la app de presupuesto personal para iPhone basada en el método de sobres. Asigna cada peso a un propósito y toma el control de tus finanzas." />
+  <meta property="og:title" content="Sobres — Presupuesto Personal" />
+  <meta property="og:description" content="Asigna cada peso a un propósito. La app de presupuesto por sobres para iPhone." />
+  <meta property="og:image" content="/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --yellow: #FFCC00;
-      --yellow-dark: #C8A000;
-      --green:  #228B22;
-      --gray:   #F5F5F7;
-      --text:   #1D1D1F;
-      --muted:  #6E6E73;
-      --border: #D2D2D7;
-      --radius: 14px;
+      --yellow:     #FFCC00;
+      --yellow-bg:  #FFF9E0;
+      --yellow-dark:#C8A000;
+      --green:      #1A8C1A;
+      --green-light:#E8F5E8;
+      --kraft:      #C49548;
+      --text:       #111827;
+      --muted:      #6B7280;
+      --border:     #E5E7EB;
+      --white:      #FFFFFF;
+      --radius-lg:  20px;
+      --radius-md:  14px;
+      --radius-sm:  8px;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--gray);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text);
-      line-height: 1.7;
-      padding: 0 16px 64px;
+      background: var(--white);
+      overflow-x: hidden;
     }
 
-    header {
-      background: var(--yellow);
-      padding: 48px 24px 36px;
-      text-align: center;
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 20px;
-      margin: 0 auto 16px;
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .nav-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
       background: var(--yellow);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 48px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      font-size: 18px;
     }
 
-    header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    header p {
-      margin-top: 6px;
-      font-size: 15px;
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
       color: var(--muted);
     }
 
-    main {
-      max-width: 720px;
-      margin: 32px auto 0;
-    }
+    .nav-links a:hover { color: var(--text); }
 
-    .card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 28px 28px;
-      margin-bottom: 16px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-
-    .card h2 {
-      font-size: 17px;
+    .btn-nav {
+      background: var(--text);
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 14px;
       font-weight: 600;
+      transition: opacity .15s;
+    }
+    .btn-nav:hover { opacity: .8; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, var(--yellow) 0%, #FFE066 60%, var(--yellow-bg) 100%);
+      padding: 80px 24px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,0,0,0.08);
+      color: #4A3800;
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+
+    .hero h1 span { color: var(--green); }
+
+    .hero p {
+      font-size: clamp(17px, 2.5vw, 20px);
+      color: #4A4A2A;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.7);
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1.5px solid rgba(0,0,0,0.12);
+      transition: background .15s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.95); }
+
+    /* Phone mockup */
+    .phone-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding-bottom: 0;
+    }
+
+    .phone {
+      width: 220px;
+      background: #1C1C1E;
+      border-radius: 40px;
+      padding: 10px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1) inset;
+      position: relative;
+    }
+
+    .phone-screen {
+      background: #F2F2F7;
+      border-radius: 32px;
+      overflow: hidden;
+      aspect-ratio: 9/19.5;
+    }
+
+    .phone-nav-bar {
+      background: #1C1C1E;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-notch {
+      width: 90px;
+      height: 18px;
+      background: #1C1C1E;
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* Screen content – Resumen */
+    .screen-header {
+      background: white;
+      padding: 10px 12px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid #E5E5EA;
+    }
+
+    .screen-month {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 12px;
+      font-size: 10px;
+      color: #8E8E93;
+    }
+
+    .screen-card {
+      margin: 6px 10px;
+      background: white;
+      border-radius: 12px;
+      padding: 10px 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .screen-tbb {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .screen-tbb-label { font-size: 9px; color: #8E8E93; }
+    .screen-tbb-amount { font-size: 20px; font-weight: 800; color: #1A8C1A; }
+    .screen-tbb-badge {
+      background: #1A8C1A;
+      color: white;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 100px;
+    }
+
+    .screen-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      font-size: 9px;
+      border-bottom: 1px solid #F2F2F7;
+    }
+    .screen-row:last-child { border-bottom: none; }
+    .screen-row-label { display: flex; align-items: center; gap: 5px; color: #6B7280; }
+    .screen-row-dot { width: 7px; height: 7px; border-radius: 50%; }
+    .screen-row-val { font-weight: 600; font-size: 9px; }
+
+    .screen-section-title {
+      padding: 8px 12px 4px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #3C3C43;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .screen-cat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 3px 10px;
+      background: white;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 9px;
+    }
+
+    .screen-cat-name { display: flex; align-items: center; gap: 4px; }
+    .screen-cat-avail { font-weight: 700; font-size: 9px; }
+
+    .screen-tabbar {
+      background: rgba(255,255,255,0.95);
+      border-top: 1px solid #E5E5EA;
+      display: flex;
+      justify-content: space-around;
+      padding: 6px 0 4px;
+    }
+
+    .tab-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      font-size: 7px;
+      color: #8E8E93;
+    }
+
+    .tab-item.active { color: var(--yellow-dark); }
+    .tab-icon { font-size: 14px; }
+
+    /* ── Features ── */
+    section { padding: 80px 24px; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--green);
       margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.8px;
+      max-width: 560px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--muted);
+      margin-top: 14px;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── How it works ── */
+    .how-bg { background: var(--yellow-bg); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 auto 16px;
+      border: 3px solid var(--yellow-dark);
+    }
+
+    .step h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Envelope method ── */
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .method-envelopes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .envelope {
+      background: var(--white);
+      border: 2px solid var(--kraft);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 28px;
+      background: linear-gradient(135deg, var(--kraft) 50%, transparent 50%),
+                  linear-gradient(225deg, var(--kraft) 50%, transparent 50%);
+      background-size: 50% 100%;
+      background-position: 0 0, 100% 0;
+      background-repeat: no-repeat;
+      border-radius: 10px 10px 0 0;
+      opacity: .3;
+    }
+
+    .envelope-emoji { font-size: 22px; margin-bottom: 6px; }
+    .envelope-name  { font-size: 12px; font-weight: 700; color: #4A3800; }
+    .envelope-amt   { font-size: 14px; font-weight: 800; color: var(--green); margin-top: 4px; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--text) 0%, #2D3748 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -.8px;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 36px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-yellow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--yellow);
+      color: var(--text);
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-size: 17px;
+      font-weight: 700;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 24px rgba(255,204,0,0.4);
+    }
+    .btn-yellow:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(255,204,0,0.5); }
+
+    /* ── Footer ── */
+    footer {
+      background: #F9FAFB;
+      border-top: 1px solid var(--border);
+      padding: 36px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .footer-brand {
       display: flex;
       align-items: center;
       gap: 8px;
+      font-weight: 700;
+      font-size: 16px;
     }
 
-    .card h2 .icon {
-      font-size: 20px;
-    }
-
-    .card p, .card li {
-      font-size: 15px;
-      color: #333;
-    }
-
-    .card ul {
-      padding-left: 20px;
-      margin-top: 8px;
-    }
-
-    .card li {
-      margin-bottom: 6px;
-    }
-
-    .highlight {
-      background: #F0FFF0;
-      border-left: 4px solid var(--green);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 16px;
-      margin-top: 12px;
-      font-size: 15px;
-    }
-
-    .updated {
-      text-align: center;
-      font-size: 13px;
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
       color: var(--muted);
-      margin-top: 32px;
     }
 
-    a { color: var(--green); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .footer-links a:hover { color: var(--text); }
 
-    @media (max-width: 480px) {
-      .card { padding: 20px 18px; }
-      header h1 { font-size: 22px; }
+    .footer-copy {
+      font-size: 13px;
+      color: #9CA3AF;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .method-grid { grid-template-columns: 1fr; }
+      .phone-wrap .phone:nth-child(2) { display: none; }
+      .phone { width: 190px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">💼</div>
-  <h1>Política de Privacidad</h1>
-  <p>Sobres — Presupuesto Personal</p>
-</header>
+<!-- ── Nav ── -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-icon">💼</div>
+    Sobres
+  </div>
+  <div class="nav-links">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#caracteristicas">Características</a>
+    <a href="#metodo">El método</a>
+    <a href="mailto:hola@sobres-app.com">Contacto</a>
+  </div>
+  <a href="#descargar" class="btn-nav">Descargar</a>
+</nav>
 
-<main>
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-badge">📱 Disponible para iPhone</div>
 
-  <div class="card">
-    <h2><span class="icon">🔒</span> Resumen en una línea</h2>
-    <div class="highlight">
-      <strong>Sobres no recopila, transmite ni comparte ningún dato personal.</strong>
-      Toda tu información financiera vive únicamente en tu iPhone.
+  <h1>Tu dinero, <span>en sus propios sobres.</span></h1>
+
+  <p>
+    Asigna cada peso a un propósito antes de gastarlo.
+    El método de presupuesto por sobres, ahora en tu iPhone.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#descargar" class="btn-primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      App Store
+    </a>
+    <a href="#como-funciona" class="btn-secondary">
+      Ver cómo funciona →
+    </a>
+  </div>
+
+  <!-- Phone mockup -->
+  <div class="phone-wrap">
+    <div class="phone">
+      <div class="phone-nav-bar"><div class="phone-notch"></div></div>
+      <div class="phone-screen">
+        <div class="screen-header">Mi Presupuesto</div>
+        <div class="screen-month">
+          <span>‹</span>
+          <span style="font-weight:600;color:#111">Junio 2026</span>
+          <span>›</span>
+        </div>
+
+        <!-- Metrics card -->
+        <div class="screen-card">
+          <div class="screen-tbb">
+            <div>
+              <div class="screen-tbb-label">Sin Asignar</div>
+              <div class="screen-tbb-amount">$2,450</div>
+            </div>
+            <div class="screen-tbb-badge">✓ Todo asignado</div>
+          </div>
+          <div style="height:6px"></div>
+          <div class="screen-row">
+            <div class="screen-row-label"><div class="screen-row-dot" style="background:#1A8C1A"></div>Total disponible</div>
+            <div class="screen-row-val">$8,200</div>
+          </div>
+          <div class="screen-row">
+            <div class="screen-row-label"><div class="screen-row-dot" style="background:#3B82F6"></div>Asignado</div>
+            <div class="screen-row-val">$15,000</div>
+          </div>
+          <div class="screen-row" style="border:none">
+            <div class="screen-row-label"><div class="screen-row-dot" style="background:#EF4444"></div>Adeudado TC</div>
+            <div class="screen-row-val" style="color:#EF4444">$4,350</div>
+          </div>
+        </div>
+
+        <div class="screen-section-title">Gastos Fijos</div>
+        <div class="screen-cat-row">
+          <div class="screen-cat-name">🏠 <span>Renta</span></div>
+          <div class="screen-cat-avail" style="color:#1A8C1A">$0</div>
+        </div>
+        <div class="screen-cat-row">
+          <div class="screen-cat-name">💡 <span>Servicios</span></div>
+          <div class="screen-cat-avail" style="color:#1A8C1A">$350</div>
+        </div>
+        <div class="screen-cat-row">
+          <div class="screen-cat-name">📱 <span>Internet</span></div>
+          <div class="screen-cat-avail" style="color:#1A8C1A">$80</div>
+        </div>
+
+        <div class="screen-section-title">Gastos Variables</div>
+        <div class="screen-cat-row">
+          <div class="screen-cat-name">🛒 <span>Súper</span></div>
+          <div class="screen-cat-avail" style="color:#F97316">$450</div>
+        </div>
+        <div class="screen-cat-row">
+          <div class="screen-cat-name">⛽ <span>Gasolina</span></div>
+          <div class="screen-cat-avail" style="color:#EF4444">-$120</div>
+        </div>
+
+        <div style="flex:1"></div>
+        <div class="screen-tabbar">
+          <div class="tab-item active"><span class="tab-icon">📋</span>Resumen</div>
+          <div class="tab-item"><span class="tab-icon">📊</span>Presupuesto</div>
+          <div class="tab-item"><span class="tab-icon">💳</span>Cuentas</div>
+          <div class="tab-item"><span class="tab-icon">📈</span>Reportes</div>
+          <div class="tab-item"><span class="tab-icon">⚙️</span>Ajustes</div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2><span class="icon">📱</span> Datos que guardamos</h2>
-    <p>Sobres almacena los siguientes datos <strong>localmente en tu dispositivo</strong>:</p>
-    <ul>
-      <li>Presupuestos, categorías y grupos de categorías que tú creas</li>
-      <li>Cuentas bancarias y tarjetas de crédito que registres manualmente</li>
-      <li>Transacciones y montos que ingreses</li>
-      <li>Pagos programados y metas de ahorro</li>
-      <li>Preferencias de la app (modo privacidad, bloqueo con Face ID)</li>
-    </ul>
-    <div class="highlight">
-      Ninguno de estos datos sale de tu dispositivo. No usamos servidores propios
-      ni de terceros para almacenar tu información.
+<!-- ── Cómo funciona ── -->
+<section class="how-bg" id="como-funciona">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <div class="section-label">Cómo funciona</div>
+    <h2 class="section-title" style="margin:0 auto">Tres pasos para tomar el control</h2>
+    <p class="section-sub" style="margin:14px auto 0">Simple, intuitivo y diseñado para México.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Registra tu ingreso</h3>
+      <p>Cuando cobras tu sueldo, lo registras en Sobres. Ese dinero queda "listo para asignar".</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Asigna a cada sobre</h3>
+      <p>Distribuye tu dinero entre categorías: Renta, Súper, Gasolina, Ahorro... cada peso con un destino.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Gasta con confianza</h3>
+      <p>Al pagar, registra la transacción. Si el sobre tiene saldo, puedes gastar. Si no, sabes que debes mover dinero.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Revisa y ajusta</h3>
+      <p>Los reportes te muestran en qué gastas más. Ajusta tus sobres cada mes y mejora mes a mes.</p>
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2><span class="icon">🚫</span> Lo que NO hacemos</h2>
-    <ul>
-      <li>No recopilamos datos de uso, analíticas ni telemetría</li>
-      <li>No conectamos con tu banco ni leemos estados de cuenta</li>
-      <li>No vendemos, alquilamos ni compartimos tu información con terceros</li>
-      <li>No mostramos publicidad de ningún tipo</li>
-      <li>No usamos cookies ni tecnologías de seguimiento</li>
-      <li>No requerimos que crees una cuenta ni que proporciones correo electrónico</li>
-    </ul>
+<!-- ── El método ── -->
+<section id="metodo" style="background:#fff">
+  <div class="method-grid">
+    <div>
+      <div class="section-label">El método de sobres</div>
+      <h2 class="section-title">La forma más efectiva de presupuestar</h2>
+      <p class="section-sub">
+        El método de sobres existe desde hace décadas: separa tu dinero físicamente
+        en sobres según categoría y solo gastas lo que hay en cada uno.
+        Sobres digitaliza esa idea para tu iPhone, sin perder la claridad mental
+        que hace que funcione.
+      </p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--green)">
+          ✓ Sin cuentas bancarias vinculadas
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--green)">
+          ✓ 100% local en tu iPhone
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--green)">
+          ✓ Sin suscripción mensual
+        </div>
+      </div>
+    </div>
+    <div class="method-envelopes">
+      <div class="envelope">
+        <div class="envelope-emoji">🏠</div>
+        <div class="envelope-name">Renta</div>
+        <div class="envelope-amt">$8,500</div>
+      </div>
+      <div class="envelope">
+        <div class="envelope-emoji">🛒</div>
+        <div class="envelope-name">Súper</div>
+        <div class="envelope-amt">$2,000</div>
+      </div>
+      <div class="envelope">
+        <div class="envelope-emoji">⛽</div>
+        <div class="envelope-name">Gasolina</div>
+        <div class="envelope-amt">$1,200</div>
+      </div>
+      <div class="envelope">
+        <div class="envelope-emoji">✈️</div>
+        <div class="envelope-name">Vacaciones</div>
+        <div class="envelope-amt">$500</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2><span class="icon">☁️</span> iCloud y sincronización</h2>
-    <p>
-      La versión actual de Sobres guarda los datos <strong>solo en este dispositivo</strong>.
-      La sincronización con iCloud está en desarrollo y llegará en una versión futura.
-      Cuando esté disponible, los datos se sincronizarán a través de tu propia cuenta
-      de iCloud y seguirán siendo privados.
-    </p>
+<!-- ── Features ── -->
+<section id="caracteristicas" style="background:#F9FAFB">
+  <div style="max-width:960px;margin:0 auto;text-align:center">
+    <div class="section-label">Características</div>
+    <h2 class="section-title" style="margin:0 auto">Todo lo que necesitas, nada de lo que no</h2>
   </div>
-
-  <div class="card">
-    <h2><span class="icon">🔑</span> Face ID / Touch ID</h2>
-    <p>
-      Sobres puede usar Face ID o Touch ID para bloquear el acceso a la app.
-      La autenticación biométrica es gestionada completamente por iOS; la app
-      nunca accede ni almacena tus datos biométricos.
-    </p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#FFF9E0">💼</div>
+      <h3>Múltiples presupuestos</h3>
+      <p>Crea presupuestos separados para tu hogar, negocio o cualquier proyecto. Cada uno con sus propias categorías y cuentas.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#E8F5E8">📅</div>
+      <h3>Pagos programados</h3>
+      <p>Registra Netflix, renta, seguros y cualquier gasto recurrente. Sobres te avisa cuando vencen a las 8 AM del día.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#EFF6FF">📊</div>
+      <h3>Reportes Pareto</h3>
+      <p>Identifica el 20% de categorías que representan el 80% de tus gastos. Gráficas de dona y barras para entender tu dinero.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#FFF5F5">💳</div>
+      <h3>Tarjetas de crédito</h3>
+      <p>Lleva el control de tus tarjetas. Sobres reserva automáticamente lo necesario para pagar tus cargos sin sorpresas.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#F5F3FF">🎯</div>
+      <h3>Metas de ahorro</h3>
+      <p>Define metas por monto, por fecha o por aportación mensual. Ve tu progreso en tiempo real con barras visuales.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#FFFBEB">🔒</div>
+      <h3>Privacidad total</h3>
+      <p>Tus datos nunca salen de tu iPhone. Sin servidores, sin sincronización en la nube (por ahora), sin anuncios.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#F0FDF4">💾</div>
+      <h3>Respaldo y exportación</h3>
+      <p>Exporta tu presupuesto completo en JSON o tus transacciones en CSV. Tus datos siempre contigo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#FFF9E0">👁</div>
+      <h3>Modo privacidad</h3>
+      <p>Oculta todos los saldos con un toque. Ideal para usar la app en público sin exponer tus finanzas.</p>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2><span class="icon">💾</span> Respaldos y exportación</h2>
-    <p>
-      Puedes exportar tu información en formato JSON (respaldo completo) o CSV
-      (transacciones). Estos archivos se generan localmente y se comparten
-      únicamente a través de las opciones que tú elijas (AirDrop, correo, etc.).
-      Sobres no envía estos archivos a ningún servidor.
-    </p>
+<!-- ── CTA ── -->
+<section class="cta-section" id="descargar">
+  <h2>Empieza hoy. Es gratis.</h2>
+  <p>Descarga Sobres en tu iPhone y asigna tu próximo peso con propósito.</p>
+  <a href="#" class="btn-yellow">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Descargar en el App Store
+  </a>
+  <p style="margin-top:20px;font-size:13px;opacity:.5">iOS 18 o superior requerido</p>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand">
+    <div class="nav-icon">💼</div>
+    Sobres
   </div>
-
-  <div class="card">
-    <h2><span class="icon">👶</span> Menores de edad</h2>
-    <p>
-      Sobres no está dirigido a menores de 13 años y no recopila información
-      de ningún usuario, independientemente de su edad.
-    </p>
+  <div class="footer-links">
+    <a href="/privacidad/">Política de Privacidad</a>
+    <a href="mailto:hola@sobres-app.com">Contacto</a>
   </div>
-
-  <div class="card">
-    <h2><span class="icon">✏️</span> Cambios a esta política</h2>
-    <p>
-      Si en el futuro modificamos esta política de privacidad, publicaremos la
-      versión actualizada en esta misma página. Te recomendamos revisarla
-      periódicamente.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon">✉️</span> Contacto</h2>
-    <p>
-      ¿Tienes preguntas sobre privacidad o sobre la app?<br/>
-      Escríbenos a <a href="mailto:hola@sobres-app.com">hola@sobres-app.com</a>
-    </p>
-  </div>
-
-  <p class="updated">Última actualización: 7 de junio de 2026</p>
-
-</main>
+  <div class="footer-copy">© 2026 Sobres. Hecho con ♥ en México.</div>
+</footer>
 
 </body>
 </html>

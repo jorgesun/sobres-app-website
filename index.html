@@ -7,7 +7,13 @@
   <meta name="description" content="Sobres es la app de presupuesto personal para iPhone basada en el método de sobres. Asigna cada peso a un propósito y toma el control de tus finanzas." />
   <meta property="og:title" content="Sobres — Presupuesto Personal" />
   <meta property="og:description" content="Asigna cada peso a un propósito. La app de presupuesto por sobres para iPhone." />
-  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image" content="https://sobres-app.com/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sobres-app.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://sobres-app.com/og-image.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -67,11 +73,15 @@
       width: 34px;
       height: 34px;
       border-radius: 8px;
-      background: var(--yellow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .nav-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .nav-links {
@@ -560,7 +570,7 @@
 <!-- ── Nav ── -->
 <nav>
   <div class="nav-brand">
-    <div class="nav-icon">💼</div>
+    <div class="nav-icon"><img src="/icon.png" alt="Sobres" /></div>
     Sobres
   </div>
   <div class="nav-links">
@@ -574,6 +584,7 @@
 
 <!-- ── Hero ── -->
 <section class="hero">
+  <img src="/icon.png" alt="Sobres" style="width:96px;height:96px;border-radius:22px;margin:0 auto 20px;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.18);" />
   <div class="hero-badge">📱 Disponible para iPhone</div>
 
   <h1>Tu dinero, <span>en sus propios sobres.</span></h1>
@@ -810,7 +821,7 @@
 <!-- ── Footer ── -->
 <footer>
   <div class="footer-brand">
-    <div class="nav-icon">💼</div>
+    <div class="nav-icon"><img src="/icon.png" alt="Sobres" /></div>
     Sobres
   </div>
   <div class="footer-links">

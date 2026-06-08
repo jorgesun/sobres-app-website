@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Sobres</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yellow: #FFCC00;
+      --yellow-dark: #C8A000;
+      --green:  #228B22;
+      --gray:   #F5F5F7;
+      --text:   #1D1D1F;
+      --muted:  #6E6E73;
+      --border: #D2D2D7;
+      --radius: 14px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--gray);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 16px 64px;
+    }
+
+    header {
+      background: var(--yellow);
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin: 0 auto 16px;
+      background: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    main {
+      max-width: 720px;
+      margin: 32px auto 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .icon {
+      font-size: 20px;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: #333;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .card li {
+      margin-bottom: 6px;
+    }
+
+    .highlight {
+      background: #F0FFF0;
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    .updated {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 32px;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .card { padding: 20px 18px; }
+      header h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💼</div>
+  <h1>Política de Privacidad</h1>
+  <p>Sobres — Presupuesto Personal</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2><span class="icon">🔒</span> Resumen en una línea</h2>
+    <div class="highlight">
+      <strong>Sobres no recopila, transmite ni comparte ningún dato personal.</strong>
+      Toda tu información financiera vive únicamente en tu iPhone.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">📱</span> Datos que guardamos</h2>
+    <p>Sobres almacena los siguientes datos <strong>localmente en tu dispositivo</strong>:</p>
+    <ul>
+      <li>Presupuestos, categorías y grupos de categorías que tú creas</li>
+      <li>Cuentas bancarias y tarjetas de crédito que registres manualmente</li>
+      <li>Transacciones y montos que ingreses</li>
+      <li>Pagos programados y metas de ahorro</li>
+      <li>Preferencias de la app (modo privacidad, bloqueo con Face ID)</li>
+    </ul>
+    <div class="highlight">
+      Ninguno de estos datos sale de tu dispositivo. No usamos servidores propios
+      ni de terceros para almacenar tu información.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🚫</span> Lo que NO hacemos</h2>
+    <ul>
+      <li>No recopilamos datos de uso, analíticas ni telemetría</li>
+      <li>No conectamos con tu banco ni leemos estados de cuenta</li>
+      <li>No vendemos, alquilamos ni compartimos tu información con terceros</li>
+      <li>No mostramos publicidad de ningún tipo</li>
+      <li>No usamos cookies ni tecnologías de seguimiento</li>
+      <li>No requerimos que crees una cuenta ni que proporciones correo electrónico</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">☁️</span> iCloud y sincronización</h2>
+    <p>
+      La versión actual de Sobres guarda los datos <strong>solo en este dispositivo</strong>.
+      La sincronización con iCloud está en desarrollo y llegará en una versión futura.
+      Cuando esté disponible, los datos se sincronizarán a través de tu propia cuenta
+      de iCloud y seguirán siendo privados.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🔑</span> Face ID / Touch ID</h2>
+    <p>
+      Sobres puede usar Face ID o Touch ID para bloquear el acceso a la app.
+      La autenticación biométrica es gestionada completamente por iOS; la app
+      nunca accede ni almacena tus datos biométricos.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">💾</span> Respaldos y exportación</h2>
+    <p>
+      Puedes exportar tu información en formato JSON (respaldo completo) o CSV
+      (transacciones). Estos archivos se generan localmente y se comparten
+      únicamente a través de las opciones que tú elijas (AirDrop, correo, etc.).
+      Sobres no envía estos archivos a ningún servidor.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">👶</span> Menores de edad</h2>
+    <p>
+      Sobres no está dirigido a menores de 13 años y no recopila información
+      de ningún usuario, independientemente de su edad.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">✏️</span> Cambios a esta política</h2>
+    <p>
+      Si en el futuro modificamos esta política de privacidad, publicaremos la
+      versión actualizada en esta misma página. Te recomendamos revisarla
+      periódicamente.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">✉️</span> Contacto</h2>
+    <p>
+      ¿Tienes preguntas sobre privacidad o sobre la app?<br/>
+      Escríbenos a <a href="mailto:hola@sobres-app.com">hola@sobres-app.com</a>
+    </p>
+  </div>
+
+  <p class="updated">Última actualización: 7 de junio de 2026</p>
+
+</main>
+
+</body>
+</html>

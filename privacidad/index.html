@@ -135,55 +135,89 @@
   <div class="card">
     <h2><span class="icon">🔒</span> Resumen en una línea</h2>
     <div class="highlight">
-      <strong>Sobres no recopila, transmite ni comparte ningún dato personal.</strong>
-      Toda tu información financiera vive únicamente en tu iPhone.
+      <strong>Sobres solo recopila lo necesario para funcionar:</strong> tu correo
+      electrónico (para tu cuenta) y la información de presupuesto que tú creas. No
+      vendemos tus datos, no mostramos publicidad y no usamos rastreadores ni analíticas.
     </div>
   </div>
 
   <div class="card">
-    <h2><span class="icon">📱</span> Datos que guardamos</h2>
-    <p>Sobres almacena los siguientes datos <strong>localmente en tu dispositivo</strong>:</p>
+    <h2><span class="icon">📝</span> Información que recopilamos</h2>
+    <p>Recopilamos únicamente lo siguiente, y solo para operar la app:</p>
     <ul>
-      <li>Presupuestos, categorías y grupos de categorías que tú creas</li>
-      <li>Cuentas bancarias y tarjetas de crédito que registres manualmente</li>
-      <li>Transacciones y montos que ingreses</li>
-      <li>Pagos programados y metas de ahorro</li>
-      <li>Preferencias de la app (modo privacidad, bloqueo con Face ID)</li>
+      <li><strong>Datos de cuenta:</strong> tu correo electrónico y una contraseña
+          cifrada, para crear tu cuenta, iniciar sesión y recuperar el acceso.</li>
+      <li><strong>Datos de presupuesto que tú creas:</strong> presupuestos, grupos y
+          categorías, cuentas y tarjetas que registras manualmente, transacciones y
+          montos, metas de ahorro y pagos programados.</li>
     </ul>
     <div class="highlight">
-      Ninguno de estos datos sale de tu dispositivo. No usamos servidores propios
-      ni de terceros para almacenar tu información.
+      Toda esta información está ligada a tu cuenta y se usa <strong>solo para el
+      funcionamiento de la app</strong>. No se utiliza para rastrearte ni para publicidad.
     </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">⚙️</span> Cómo usamos tu información</h2>
+    <ul>
+      <li>Para autenticarte y mantener tu sesión.</li>
+      <li>Para guardar, mostrar y sincronizar tu presupuesto entre tus dispositivos.</li>
+      <li>Para enviarte correos de tu cuenta (verificación y recuperación de contraseña).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">☁️</span> Almacenamiento y sincronización</h2>
+    <p>
+      Tus datos se guardan localmente en tu dispositivo (con SwiftData de Apple) y se
+      respaldan y sincronizan en <strong>Supabase</strong>, nuestro proveedor de base de
+      datos y autenticación. Cada usuario está aislado por reglas de seguridad a nivel de
+      fila (Row Level Security): solo tú puedes acceder a tus propios datos.
+    </p>
+    <p>
+      La comunicación con el servidor va siempre cifrada en tránsito (HTTPS/TLS). Supabase
+      procesa los datos por nuestra cuenta; sus servidores pueden ubicarse fuera de tu país.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">💱</span> Tipo de cambio (multimoneda)</h2>
+    <p>
+      Si usas cuentas en otra moneda, la app consulta una tabla global de tipos de cambio
+      en nuestro servidor. Es una consulta de solo lectura y <strong>no envía ninguno de
+      tus datos personales ni financieros</strong>.
+    </p>
   </div>
 
   <div class="card">
     <h2><span class="icon">🚫</span> Lo que NO hacemos</h2>
     <ul>
       <li>No recopilamos datos de uso, analíticas ni telemetría</li>
-      <li>No conectamos con tu banco ni leemos estados de cuenta</li>
-      <li>No vendemos, alquilamos ni compartimos tu información con terceros</li>
+      <li>No accedemos a tu ubicación, contactos, cámara ni micrófono</li>
+      <li>No usamos identificadores de publicidad ni rastreo entre apps</li>
+      <li>No vendemos, alquilamos ni compartimos tu información con fines comerciales</li>
       <li>No mostramos publicidad de ningún tipo</li>
-      <li>No usamos cookies ni tecnologías de seguimiento</li>
-      <li>No requerimos que crees una cuenta ni que proporciones correo electrónico</li>
+      <li>No conectamos con tu banco ni leemos estados de cuenta: los saldos y movimientos
+          los ingresas tú manualmente</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2><span class="icon">☁️</span> iCloud y sincronización</h2>
+    <h2><span class="icon">🤝</span> Compartir con terceros</h2>
     <p>
-      La versión actual de Sobres guarda los datos <strong>solo en este dispositivo</strong>.
-      La sincronización con iCloud está en desarrollo y llegará en una versión futura.
-      Cuando esté disponible, los datos se sincronizarán a través de tu propia cuenta
-      de iCloud y seguirán siendo privados.
+      No vendemos ni compartimos tu información personal con terceros con fines comerciales.
+      Solo la compartimos con los proveedores de infraestructura estrictamente necesarios
+      para operar la app (Supabase, para autenticación y base de datos), que la procesan
+      bajo nuestras instrucciones. También podríamos divulgarla si la ley lo exige.
     </p>
   </div>
 
   <div class="card">
     <h2><span class="icon">🔑</span> Face ID / Touch ID</h2>
     <p>
-      Sobres puede usar Face ID o Touch ID para bloquear el acceso a la app.
-      La autenticación biométrica es gestionada completamente por iOS; la app
-      nunca accede ni almacena tus datos biométricos.
+      Sobres puede usar Face ID o Touch ID para bloquear el acceso a la app, además de un
+      modo de privacidad para ocultar tus saldos. La autenticación biométrica la gestiona
+      completamente iOS; la app nunca accede ni almacena tus datos biométricos.
     </p>
   </div>
 
@@ -191,25 +225,44 @@
     <h2><span class="icon">💾</span> Respaldos y exportación</h2>
     <p>
       Puedes exportar tu información en formato JSON (respaldo completo) o CSV
-      (transacciones). Estos archivos se generan localmente y se comparten
-      únicamente a través de las opciones que tú elijas (AirDrop, correo, etc.).
-      Sobres no envía estos archivos a ningún servidor.
+      (transacciones). Estos archivos se generan en tu dispositivo y se comparten
+      únicamente a donde tú decidas enviarlos (AirDrop, correo, etc.).
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🗑️</span> Eliminación de tu cuenta y tus datos</h2>
+    <p>
+      Puedes eliminar tu cuenta directamente desde la app (Ajustes → Eliminar cuenta). Al
+      confirmarlo, se borran de forma permanente tu usuario y <strong>todos tus datos
+      asociados en el servidor</strong>, así como la copia local en el dispositivo. Esta
+      acción es irreversible. Si además eliminas la app, la copia local también se elimina.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🛡️</span> Seguridad</h2>
+    <p>
+      Protegemos tu información con cifrado en tránsito (HTTPS/TLS), contraseñas almacenadas
+      de forma cifrada y aislamiento por usuario (RLS). Ningún sistema es 100&nbsp;% infalible,
+      pero aplicamos medidas razonables conforme a las mejores prácticas.
     </p>
   </div>
 
   <div class="card">
     <h2><span class="icon">👶</span> Menores de edad</h2>
     <p>
-      Sobres no está dirigido a menores de 13 años y no recopila información
-      de ningún usuario, independientemente de su edad.
+      Sobres no está dirigido a menores de 13 años y no recopilamos conscientemente
+      información de menores. Si crees que un menor nos proporcionó datos, contáctanos
+      para eliminarlos.
     </p>
   </div>
 
   <div class="card">
     <h2><span class="icon">✏️</span> Cambios a esta política</h2>
     <p>
-      Si en el futuro modificamos esta política de privacidad, publicaremos la
-      versión actualizada en esta misma página. Te recomendamos revisarla
+      Si modificamos esta política de privacidad, publicaremos la versión actualizada en
+      esta misma página y actualizaremos la fecha de vigencia. Te recomendamos revisarla
       periódicamente.
     </p>
   </div>
@@ -217,12 +270,12 @@
   <div class="card">
     <h2><span class="icon">✉️</span> Contacto</h2>
     <p>
-      ¿Tienes preguntas sobre privacidad o sobre la app?<br/>
+      ¿Tienes preguntas sobre privacidad, o deseas ejercer tus derechos sobre tus datos?<br/>
       Escríbenos a <a href="mailto:hola@sobres-app.com">hola@sobres-app.com</a>
     </p>
   </div>
 
-  <p class="updated">Última actualización: 7 de junio de 2026</p>
+  <p class="updated">Última actualización: 26 de junio de 2026</p>
 
 </main>
 

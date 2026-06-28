@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soporte — Sobres</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yellow: #FFCC00;
+      --yellow-dark: #C8A000;
+      --green:  #228B22;
+      --gray:   #F5F5F7;
+      --text:   #1D1D1F;
+      --muted:  #6E6E73;
+      --border: #D2D2D7;
+      --radius: 14px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--gray);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0 16px 64px;
+    }
+
+    header {
+      background: var(--yellow);
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin: 0 auto 16px;
+      background: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    main {
+      max-width: 720px;
+      margin: 32px auto 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .icon {
+      font-size: 20px;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      color: #333;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .card li {
+      margin-bottom: 6px;
+    }
+
+    .faq {
+      margin-top: 16px;
+    }
+
+    .faq:first-of-type {
+      margin-top: 8px;
+    }
+
+    .faq .q {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .faq .a {
+      font-size: 15px;
+      color: #333;
+      margin-top: 4px;
+    }
+
+    .highlight {
+      background: #F0FFF0;
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    .updated {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 32px;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .card { padding: 20px 18px; }
+      header h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">💬</div>
+  <h1>Soporte</h1>
+  <p>Sobres — Presupuesto Personal</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2><span class="icon">✉️</span> ¿Necesitas ayuda?</h2>
+    <div class="highlight">
+      ¿Tienes una duda, encontraste un error o quieres sugerir algo? Escríbenos a
+      <a href="mailto:hola@sobres-app.com">hola@sobres-app.com</a> y te respondemos
+      en un plazo de 24 a 48 horas.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">❓</span> Preguntas frecuentes</h2>
+
+    <div class="faq">
+      <div class="q">¿Cómo asigno dinero a un sobre?</div>
+      <div class="a">En la pestaña <strong>Presupuesto</strong>, toca el monto de la
+        columna “Asignado” de la categoría y escribe la cantidad. Puedes usar
+        <strong>+</strong> o <strong>−</strong> para sumar o restar sobre lo que ya tenía.</div>
+    </div>
+
+    <div class="faq">
+      <div class="q">¿Cómo registro un gasto o ingreso?</div>
+      <div class="a">Abre una cuenta en la pestaña <strong>Cuentas</strong> y agrega una
+        transacción. Elige egreso, ingreso o transferencia, pon el monto y, si es un
+        gasto, la categoría a la que pertenece.</div>
+    </div>
+
+    <div class="faq">
+      <div class="q">¿Qué pasa si gasto de más en un sobre?</div>
+      <div class="a">El disponible de esa categoría se marca en rojo. Para corregirlo,
+        mueve dinero desde otro sobre con saldo hacia el que quedó negativo.</div>
+    </div>
+
+    <div class="faq">
+      <div class="q">¿Cómo manejo mis tarjetas de crédito?</div>
+      <div class="a">Al registrar una cuenta de tarjeta, Sobres crea un sobre para ella.
+        Apartas ahí el dinero de los gastos que hiciste con la tarjeta, para tener listo
+        el pago y evitar que la deuda crezca.</div>
+    </div>
+
+    <div class="faq">
+      <div class="q">¿Cómo creo un pago recurrente?</div>
+      <div class="a">Desde <strong>Pagos programados</strong> defines el monto, la cuenta,
+        la categoría y la frecuencia. La app te recuerda cuando vence y lo registras con
+        un toque.</div>
+    </div>
+
+    <div class="faq">
+      <div class="q">¿Cómo oculto mis saldos o bloqueo la app?</div>
+      <div class="a">Activa el <strong>modo privacidad</strong> para ocultar los montos de
+        un vistazo, y el <strong>bloqueo con Face&nbsp;ID / Touch&nbsp;ID</strong> desde
+        <strong>Ajustes</strong>.</div>
+    </div>
+
+    <div class="faq">
+      <div class="q">¿Mis datos se sincronizan entre dispositivos?</div>
+      <div class="a">Sí. Al iniciar sesión, tu información se sincroniza de forma segura
+        con tu cuenta para tenerla en todos tus dispositivos. La app también funciona sin
+        conexión y sincroniza cuando vuelves a tener internet.</div>
+    </div>
+
+    <div class="faq">
+      <div class="q">¿Puedo exportar o respaldar mi información?</div>
+      <div class="a">Sí. Desde <strong>Ajustes</strong> puedes exportar un respaldo
+        completo en JSON o tus transacciones en CSV.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🗑️</span> Eliminar tu cuenta</h2>
+    <p>
+      Puedes borrar permanentemente tu cuenta y todos sus datos desde la app:
+      <strong>Ajustes → Cuenta → Eliminar cuenta</strong>. La acción es irreversible.
+    </p>
+    <div class="highlight">
+      Si tienes problemas para hacerlo, escríbenos a
+      <a href="mailto:hola@sobres-app.com">hola@sobres-app.com</a> y lo resolvemos.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🔒</span> Privacidad</h2>
+    <p>
+      Consulta cómo cuidamos tu información en nuestra
+      <a href="/privacidad">Política de Privacidad</a>.
+    </p>
+  </div>
+
+  <p class="updated">Última actualización: 27 de junio de 2026</p>
+
+</main>
+
+</body>
+</html>

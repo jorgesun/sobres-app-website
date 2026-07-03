@@ -135,48 +135,72 @@
   <div class="card">
     <h2><span class="icon">🔒</span> Resumen en una línea</h2>
     <div class="highlight">
-      <strong>Sobres solo recopila lo necesario para funcionar:</strong> tu correo
-      electrónico (para tu cuenta) y la información de presupuesto que tú creas. No
-      vendemos tus datos, no mostramos publicidad y no usamos rastreadores ni analíticas.
+      <strong>Tus datos son tuyos.</strong> Puedes usar Sobres <strong>sin cuenta</strong>,
+      y entonces toda tu información se guarda únicamente en tu dispositivo. La
+      sincronización en la nube es <strong>opcional</strong> y solo ocurre si creas una
+      cuenta. No vendemos tus datos, no mostramos publicidad y no usamos rastreadores.
     </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">📱</span> Puedes usar la app sin cuenta</h2>
+    <p>Sobres funciona de dos formas, y tú eliges:</p>
+    <ul>
+      <li><strong>Modo local (sin cuenta):</strong> al elegir <em>"Continuar sin
+          cuenta"</em>, toda la app funciona y tus datos —presupuestos, cuentas,
+          transacciones, categorías, metas— se guardan <strong>solo en tu
+          dispositivo</strong>. En este modo no enviamos nada a ningún servidor ni
+          recopilamos tu correo.</li>
+      <li><strong>Modo sincronizado (con cuenta):</strong> si creas una cuenta o inicias
+          sesión, habilitas el respaldo y la sincronización entre tus dispositivos. Puedes
+          volver al modo local cerrando sesión; tus datos permanecen en el dispositivo.</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2><span class="icon">📝</span> Información que recopilamos</h2>
     <p>Recopilamos únicamente lo siguiente, y solo para operar la app:</p>
     <ul>
-      <li><strong>Datos de cuenta:</strong> tu correo electrónico y una contraseña
-          cifrada, para crear tu cuenta, iniciar sesión y recuperar el acceso.</li>
+      <li><strong>Datos de cuenta (solo si creas una cuenta):</strong> tu correo
+          electrónico y una contraseña cifrada, para iniciar sesión y recuperar el acceso.
+          Si usas el modo local sin cuenta, <strong>no recopilamos tu correo</strong>.</li>
       <li><strong>Datos de presupuesto que tú creas:</strong> presupuestos, grupos y
           categorías, cuentas y tarjetas que registras manualmente, transacciones y
-          montos, metas de ahorro y pagos programados.</li>
+          montos, metas de ahorro y pagos programados. Siempre se guardan en tu
+          dispositivo; se sincronizan a la nube <strong>solo si tienes sesión
+          iniciada</strong>.</li>
     </ul>
     <div class="highlight">
-      Toda esta información está ligada a tu cuenta y se usa <strong>solo para el
-      funcionamiento de la app</strong>. No se utiliza para rastrearte ni para publicidad.
+      Esta información se usa <strong>solo para el funcionamiento de la app</strong>. No se
+      utiliza para rastrearte ni para publicidad.
     </div>
   </div>
 
   <div class="card">
     <h2><span class="icon">⚙️</span> Cómo usamos tu información</h2>
     <ul>
-      <li>Para autenticarte y mantener tu sesión.</li>
-      <li>Para guardar, mostrar y sincronizar tu presupuesto entre tus dispositivos.</li>
-      <li>Para enviarte correos de tu cuenta (verificación y recuperación de contraseña).</li>
+      <li>Para guardar y mostrar tu presupuesto en tu dispositivo (siempre).</li>
+      <li>Si tienes cuenta: para autenticarte, mantener tu sesión y sincronizar tu
+          presupuesto entre tus dispositivos.</li>
+      <li>Si tienes cuenta: para enviarte correos de tu cuenta (verificación y
+          recuperación de contraseña).</li>
     </ul>
   </div>
 
   <div class="card">
     <h2><span class="icon">☁️</span> Almacenamiento y sincronización</h2>
     <p>
-      Tus datos se guardan localmente en tu dispositivo (con SwiftData de Apple) y se
-      respaldan y sincronizan en <strong>Supabase</strong>, nuestro proveedor de base de
-      datos y autenticación. Cada usuario está aislado por reglas de seguridad a nivel de
-      fila (Row Level Security): solo tú puedes acceder a tus propios datos.
+      Tus datos siempre se guardan localmente en tu dispositivo (con SwiftData de Apple).
+      <strong>En modo local (sin cuenta) ahí termina todo:</strong> nada se envía a ningún
+      servidor.
     </p>
     <p>
-      La comunicación con el servidor va siempre cifrada en tránsito (HTTPS/TLS). Supabase
-      procesa los datos por nuestra cuenta; sus servidores pueden ubicarse fuera de tu país.
+      <strong>Solo si tienes sesión iniciada</strong>, tus datos se respaldan y sincronizan
+      en <strong>Supabase</strong>, nuestro proveedor de base de datos y autenticación.
+      Cada usuario está aislado por reglas de seguridad a nivel de fila (Row Level
+      Security): solo tú puedes acceder a tus propios datos. La comunicación con el servidor
+      va siempre cifrada en tránsito (HTTPS/TLS). Supabase procesa los datos por nuestra
+      cuenta; sus servidores pueden ubicarse fuera de tu país.
     </p>
   </div>
 
@@ -275,7 +299,7 @@
     </p>
   </div>
 
-  <p class="updated">Última actualización: 26 de junio de 2026</p>
+  <p class="updated">Última actualización: 2 de julio de 2026</p>
 
 </main>
 

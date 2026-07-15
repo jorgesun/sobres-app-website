@@ -1,0 +1,31 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Marca Sobres */
+  --yellow:      #FFCC00;
+  --yellow-bg:   #FFF9E0;
+  --yellow-dark: #C8A000;
+  --green:       #1A8C1A;
+  --green-light: #E8F5E8;
+  --kraft:       #C49548;
+  --text:        #111827;
+  --muted:       #6B7280;
+  --border:      #E5E7EB;
+  --white:       #FFFFFF;
+  --radius-lg:   20px;
+  --radius-md:   14px;
+  --radius-sm:   8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; }

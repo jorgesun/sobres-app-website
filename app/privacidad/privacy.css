@@ -1,0 +1,43 @@
+/* Privacy page. Scoped under .privacy. */
+.privacy {
+  --p-green: #228B22;
+  --p-gray: #F5F5F7;
+  --p-muted: #6E6E73;
+  background: var(--p-gray);
+  color: #1D1D1F;
+  line-height: 1.7;
+  padding: 0 16px 64px;
+  min-height: 100vh;
+}
+
+.privacy header {
+  background: var(--yellow);
+  padding: 48px 24px 36px;
+  text-align: center;
+  margin: 0 -16px;
+}
+.privacy .logo {
+  width: 80px; height: 80px; border-radius: 20px; margin: 0 auto 16px; background: var(--yellow);
+  display: flex; align-items: center; justify-content: center; font-size: 48px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.privacy header h1 { font-size: 28px; font-weight: 700; color: #1D1D1F; }
+.privacy header p { margin-top: 6px; font-size: 15px; color: var(--p-muted); }
+
+.privacy main { max-width: 720px; margin: 32px auto 0; }
+.privacy .card { background: #fff; border-radius: 14px; padding: 28px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.privacy .card h2 { font-size: 17px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.privacy .card h2 .icon { font-size: 20px; }
+.privacy .card p, .privacy .card li { font-size: 15px; color: #333; }
+.privacy .card ul { padding-left: 20px; margin-top: 8px; }
+.privacy .card li { margin-bottom: 6px; }
+.privacy .highlight { background: #F0FFF0; border-left: 4px solid var(--p-green); border-radius: 0 8px 8px 0; padding: 14px 16px; margin-top: 12px; font-size: 15px; }
+.privacy .updated { text-align: center; font-size: 13px; color: var(--p-muted); margin-top: 32px; }
+
+.privacy a { color: var(--p-green); }
+.privacy a:hover { text-decoration: underline; }
+.privacy a[href^="mailto:"] { white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .privacy .card { padding: 20px 18px; }
+  .privacy header h1 { font-size: 22px; }
+}

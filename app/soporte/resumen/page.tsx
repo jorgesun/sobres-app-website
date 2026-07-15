@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Toc, PrevNext, Callout, Steps, WhatIf, WhatIfItem, Shot } from "../components";
+import { PageHeader, Toc, PrevNext, Callout, Steps, WhatIf, WhatIfItem, Screenshot, ScreenshotRow } from "../components";
 
 const SLUG = "/soporte/resumen";
 
@@ -29,7 +29,18 @@ export default function Resumen() {
         Resumen es para <strong>ver cómo vas</strong> y para procesar tus pagos programados.
       </p>
 
-      <Shot label="pestaña Resumen" />
+      <ScreenshotRow>
+        <Screenshot
+          src="/soporte/resumen-metricas.png"
+          alt="Parte superior de Resumen: tarjeta «Disponible para gastar $59,200.00 · Sin sobregastos», y las métricas Sin asignar $0.00, Asignado este mes $65,000.00 y Adeudado en tarjetas $6,350.00, seguidas de las metas con su barra de progreso."
+          caption="Arriba: disponible para gastar, «sin asignar», asignado del mes y deuda de tarjetas."
+        />
+        <Screenshot
+          src="/soporte/resumen-calendario.png"
+          alt="Parte inferior de Resumen: las metas con barra de progreso y el «Calendario — Pagos recurrentes» de julio 2026."
+          caption="Abajo: tus metas y el calendario de pagos programados (toca un día para procesarlo)."
+        />
+      </ScreenshotRow>
 
       <h2 id="que-ves">Qué ves aquí</h2>
       <ul>

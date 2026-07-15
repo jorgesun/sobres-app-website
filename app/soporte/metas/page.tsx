@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Toc, PrevNext, Callout, TableWrap, Steps, WhatIf, WhatIfItem, Shot, Screenshot } from "../components";
+import { PageHeader, Toc, PrevNext, Callout, TableWrap, Steps, WhatIf, WhatIfItem, Screenshot } from "../components";
 
 const SLUG = "/soporte/metas";
 
@@ -30,7 +30,11 @@ export default function Metas() {
         creciendo hasta llegar a la meta.
       </p>
 
-      <Shot label="categoría con barra de progreso de meta" />
+      <Screenshot
+        src="/soporte/resumen-metricas.png"
+        alt="Sección «Metas» en la pestaña Resumen: «Fondo de Emergencia» con barra de progreso azul y «Faltan $30,000.00», y «Vacaciones» con barra verde y «Lista»."
+        caption="En Resumen, cada meta se muestra con su barra de progreso y cuánto falta."
+      />
 
       <h2 id="tipos">Los 5 tipos de meta</h2>
       <TableWrap>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Toc, PrevNext, Callout, Steps, Money, MoneyRow, WhatIf, WhatIfItem, Shot } from "../components";
+import { PageHeader, Toc, PrevNext, Callout, Steps, Money, MoneyRow, WhatIf, WhatIfItem, Screenshot } from "../components";
 
 const SLUG = "/soporte/presupuesto";
 
@@ -30,7 +30,11 @@ export default function Presupuesto() {
         un sobre con su propio saldo disponible.
       </p>
 
-      <Shot label="pestaña Presupuesto con grupos y categorías" />
+      <Screenshot
+        src="/soporte/presupuesto.png"
+        alt="Pestaña Presupuesto: arriba «Sin asignar $0.00 · Todo asignado» y el mes; abajo las categorías por grupo (Gastos Fijos, Gastos Variables) con sus columnas Asignado y Disponible."
+        caption="La pestaña Presupuesto: «Sin asignar» arriba y cada sobre con su Asignado y Disponible."
+      />
 
       <h2 id="que-ves">Qué ves aquí</h2>
       <ul>

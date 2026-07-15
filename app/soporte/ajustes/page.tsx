@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Toc, PrevNext, Callout, Steps, WhatIf, WhatIfItem, Shot } from "../components";
+import { PageHeader, Toc, PrevNext, Callout, Steps, WhatIf, WhatIfItem, Screenshot } from "../components";
 
 const SLUG = "/soporte/ajustes";
 
@@ -25,7 +25,11 @@ export default function Ajustes() {
       <h2 id="para-que">¿Para qué sirve esta pantalla?</h2>
       <p>Para dejar la app a tu medida y mantener tus datos seguros y bajo tu control.</p>
 
-      <Shot label="pestaña Ajustes" />
+      <Screenshot
+        src="/soporte/ajustes.png"
+        alt="Pestaña Ajustes: secciones de Seguridad (Bloqueo con Face ID / Touch ID, Ocultar saldos), Notificaciones (avisos de pagos programados) y Datos (exportar/importar)."
+        caption="La pestaña Ajustes: seguridad, notificaciones y tus datos."
+      />
 
       <h2 id="que-ves">Qué encuentras aquí</h2>
       <ul>

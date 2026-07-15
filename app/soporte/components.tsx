@@ -218,6 +218,28 @@ export function Shot({ label }: { label: string }) {
   return <div className="sop-shot">📸 [captura: {label}]</div>;
 }
 
+export function Screenshot({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+}) {
+  return (
+    <figure className="sop-figure">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} loading="lazy" />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+  );
+}
+
+export function ScreenshotRow({ children }: { children: ReactNode }) {
+  return <div className="sop-figrow">{children}</div>;
+}
+
 export function BigCta({
   title,
   sub,

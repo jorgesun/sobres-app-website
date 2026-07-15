@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Toc, PrevNext, Callout, WhatIf, WhatIfItem, Shot } from "../components";
+import { PageHeader, Toc, PrevNext, Callout, WhatIf, WhatIfItem, Screenshot, ScreenshotRow } from "../components";
 
 const SLUG = "/soporte/reportes";
 
@@ -28,7 +28,18 @@ export default function Reportes() {
         sobres el próximo mes con datos y no a ojo.
       </p>
 
-      <Shot label="pestaña Reportes con gráficas de dona y barras" />
+      <ScreenshotRow>
+        <Screenshot
+          src="/soporte/reportes-mensual.png"
+          alt="Reportes, vista Mensual: tarjeta de «Patrimonio neto $58,150» con su tendencia, y una gráfica de dona de «Gastos por grupo»."
+          caption="Vista Mensual: patrimonio neto y gastos por grupo (dona)."
+        />
+        <Screenshot
+          src="/soporte/reportes-tendencias.png"
+          alt="Reportes, vista Tendencias: gráfica de barras de gasto por categoría (Súper) a 6 meses, con promedio, máximo y total."
+          caption="Vista Tendencias: el gasto de una categoría mes a mes (barras)."
+        />
+      </ScreenshotRow>
 
       <h2 id="que-ves">Qué ves aquí</h2>
       <ul>

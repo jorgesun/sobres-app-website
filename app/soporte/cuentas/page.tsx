@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Toc, PrevNext, Callout, Steps, TableWrap, WhatIf, WhatIfItem, Shot } from "../components";
+import { PageHeader, Toc, PrevNext, Callout, Steps, TableWrap, WhatIf, WhatIfItem, Screenshot } from "../components";
 
 const SLUG = "/soporte/cuentas";
 
@@ -30,7 +30,11 @@ export default function Cuentas() {
         movimiento que haces con él.
       </p>
 
-      <Shot label="pestaña Cuentas con la lista de cuentas y saldos" />
+      <Screenshot
+        src="/soporte/cuentas.png"
+        alt="Pestaña Cuentas: tarjeta superior con «Disponible en cuentas $62,500.00» y las cuentas agrupadas por tipo (Cheques, Tarjeta de Crédito, Inversión) con sus saldos."
+        caption="La pestaña Cuentas: el disponible total arriba y tus cuentas por tipo (cheques, tarjeta, inversión)."
+      />
 
       <h2 id="tipos">Tipos de cuenta</h2>
       <TableWrap>

@@ -271,6 +271,19 @@
   color: var(--muted); font-size: 13px; padding: 26px; text-align: center; margin: 20px 0;
 }
 
+/* ── Real screenshots ── */
+.sop-figure { margin: 24px 0; text-align: center; }
+.sop-figure img {
+  width: 100%; max-width: 300px; border-radius: 26px;
+  border: 1px solid var(--border); box-shadow: var(--shadow); background: var(--surface);
+}
+.sop-figure figcaption { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.sop-figrow {
+  display: flex; gap: 20px; justify-content: center; align-items: flex-start;
+  flex-wrap: wrap; margin: 24px 0;
+}
+.sop-figrow .sop-figure { margin: 0; max-width: 300px; }
+
 /* ── Big CTA to star page ── */
 .sop-bigcta {
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;

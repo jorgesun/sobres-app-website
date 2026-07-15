@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageHeader, Toc, PrevNext, Callout, TableWrap, Steps, WhatIf, WhatIfItem, Shot } from "../components";
+import { PageHeader, Toc, PrevNext, Callout, TableWrap, Steps, WhatIf, WhatIfItem, Shot, Screenshot } from "../components";
 
 const SLUG = "/soporte/metas";
 
@@ -75,7 +75,11 @@ export default function Metas() {
         <li><strong>Gráfica</strong> — tu avance real y la <strong>proyección</strong> de cuándo la alcanzarás si sigues a este ritmo.</li>
       </ul>
 
-      <Shot label="pantalla de detalle de meta con anillo y gráfica de proyección" />
+      <Screenshot
+        src="/soporte/meta-detalle.png"
+        alt="Pantalla de detalle de una meta «Vacaciones»: anillo de progreso al 20% con «Aporte de este mes cubierto», y una gráfica «Ruta hacia la meta» con el acumulado real y la proyección hacia los $150,000."
+        caption="Detalle de meta: anillo de progreso arriba y la gráfica de avance real + proyección abajo."
+      />
 
       <h2 id="dinero">Qué le pasa a tu dinero</h2>
       <p>

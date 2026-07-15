@@ -47,7 +47,6 @@ export const NAV: NavGroup[] = [
       { slug: "/soporte/presupuesto", title: "Pestaña Presupuesto", short: "Presupuesto", desc: "Tus sobres: asignar dinero y moverlo entre categorías.", icon: "📊", read: "6 min" },
       { slug: "/soporte/cuentas", title: "Pestaña Cuentas", short: "Cuentas", desc: "Cuentas, transacciones, confirmar y reconciliar.", icon: "💳", read: "6 min" },
       { slug: "/soporte/reportes", title: "Pestaña Reportes", short: "Reportes", desc: "Tendencias de gasto, patrimonio y gráficas.", icon: "📈", read: "3 min" },
-      { slug: "/soporte/diagnostico", title: "Pestaña Diagnóstico", short: "Diagnóstico", desc: "La salud de tu presupuesto y sus señales de alerta.", icon: "🩺", read: "3 min" },
       { slug: "/soporte/ajustes", title: "Pestaña Ajustes", short: "Ajustes", desc: "Tema, Face ID, privacidad, multimoneda y tus datos.", icon: "⚙️", read: "4 min" },
     ],
   },

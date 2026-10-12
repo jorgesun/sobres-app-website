@@ -254,3 +254,9 @@
   .home * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Selector de idioma: texto plano junto a "Entrar". Vive en `nav-actions` y no
+   en `nav-links` porque esos se ocultan en el teléfono, y es justo ahí donde
+   quien no lee español necesita encontrarlo. */
+.nav-lang { font-size: 14px; font-weight: 500; color: var(--muted); padding: 0 4px; }
+.nav-lang:hover { color: var(--text); }

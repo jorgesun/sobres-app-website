@@ -79,10 +79,10 @@ export default function PreguntasFrecuentes() {
           <p>Activa el <strong>modo privacidad</strong> para ocultar los montos, y el <strong>bloqueo con Face ID / Touch ID</strong> desde Ajustes.</p>
         </Faq>
         <Faq q="¿Cómo elimino mi cuenta?">
-          <p>En <strong>Ajustes → Cuenta → Eliminar cuenta</strong>. Borra tu usuario y todos tus datos de forma permanente e irreversible.</p>
+          <p>En <strong>Ajustes → Cuenta → Eliminar cuenta</strong> en el iPhone, o en <strong>Ajustes → Zona de peligro</strong> en la web. Borra tu usuario y todos tus datos de forma permanente e irreversible.</p>
         </Faq>
         <Faq q="¿Usan anuncios o rastreadores?">
-          <p>No. Sin anuncios, sin rastreadores de terceros y sin analítica. Ver la <Link href="/privacidad">Política de Privacidad</Link>.</p>
+          <p>No. Sin anuncios y sin rastreadores ni analíticas de terceros. En la app web contamos las visitas con una medición propia, sin cookies y sin guardar tu IP. Ver la <Link href="/privacidad">Política de Privacidad</Link>.</p>
         </Faq>
       </div>
 

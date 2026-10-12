@@ -82,10 +82,10 @@ export default function FAQ() {
           <p>Turn on <strong>privacy mode</strong> to hide amounts, and the <strong>Face ID / Touch ID lock</strong> in Settings.</p>
         </Faq>
         <Faq q="How do I delete my account?">
-          <p>In <strong>Settings → Account → Delete account</strong>. It deletes your user and all your data permanently and irreversibly.</p>
+          <p>In <strong>Settings → Account → Delete account</strong> on iPhone, or <strong>Settings → Danger zone</strong> on the web. It deletes your user and all your data permanently and irreversibly.</p>
         </Faq>
         <Faq q="Do you use ads or trackers?">
-          <p>No. No ads, no third-party trackers and no analytics. See the <Link href="/privacidad">Privacy Policy</Link> (in Spanish).</p>
+          <p>No. No ads, and no third-party trackers or analytics. In the web app we count visits with our own measurement, without cookies and without storing your IP. See the <Link href="/en/privacy">Privacy Policy</Link>.</p>
         </Faq>
       </div>
 

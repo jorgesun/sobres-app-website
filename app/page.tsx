@@ -1,19 +1,5 @@
 import "./home.css";
-
-/* Enlace real a la ficha de la app. Sin código de país a propósito: Apple
-   redirige a la tienda del visitante (`/us`, `/mx`, `/co`…). Si se fija `/mx/`,
-   quien entre desde otro país cae en una página que le dice que la app no está
-   disponible en su tienda, aunque sí lo esté. */
-const APP_STORE_URL = "https://apps.apple.com/app/id6785159272";
-const WEB_APP_URL = "https://app.sobres-app.com";
-
-function AppStoreGlyph({ size = 22 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-    </svg>
-  );
-}
+import { APP_STORE_URL, AppStoreGlyph, WEB_APP_URL } from "./portada";
 
 /* Las capturas son las mismas que están publicadas en la ficha del App Store
    (1.1.1). Salen de ahí a propósito: si la tienda y el sitio muestran pantallas
@@ -66,6 +52,7 @@ export default function HomePage() {
             acción principal del sitio. Es dominio aparte (app.sobres-app.com),
             así que es un <a> normal y no una ruta de este Next. */}
         <div className="nav-actions">
+          <a href="/en" className="nav-lang" hrefLang="en" lang="en" aria-label="Sobres in English">English</a>
           <a href={WEB_APP_URL} className="btn-nav-ghost">Entrar</a>
           <a href={APP_STORE_URL} className="btn-nav">Descargar</a>
         </div>
@@ -221,7 +208,7 @@ export default function HomePage() {
           <div className="feature-card"><div className="feature-icon" style={{ background: "#EFF6FF" }}>📊</div><h3>Reportes que se entienden</h3><p>Patrimonio neto, donas de gasto por grupo y por categoría, y tendencias mes a mes para ver si vas subiendo o bajando.</p></div>
           <div className="feature-card"><div className="feature-icon" style={{ background: "#F5F3FF" }}>🎯</div><h3>Metas de ahorro</h3><p>Por monto, por fecha o por aportación fija al mes. La app calcula cuánto le toca a cada mes y te muestra el avance.</p></div>
           <div className="feature-card"><div className="feature-icon" style={{ background: "#F0FDF4" }}>✂️</div><h3>Gastos divididos</h3><p>Un ticket del súper que trae despensa, farmacia y cosas del bebé se reparte entre varios sobres, sin inventar dos gastos.</p></div>
-          <div className="feature-card"><div className="feature-icon" style={{ background: "#FFFBEB" }}>🔒</div><h3>Privacidad primero</h3><p>Face ID para abrirla, modo privacidad para ocultar saldos, y solo tu correo para la cuenta. Sin anuncios ni analíticas.</p></div>
+          <div className="feature-card"><div className="feature-icon" style={{ background: "#FFFBEB" }}>🔒</div><h3>Privacidad primero</h3><p>Face ID para abrirla, modo privacidad para ocultar saldos, y solo tu correo para la cuenta. Sin anuncios ni rastreadores de terceros.</p></div>
           <div className="feature-card"><div className="feature-icon" style={{ background: "#EEF2FF" }}>💻</div><h3>iPhone y navegador</h3><p>La misma cuenta y los mismos datos desde tu teléfono o desde la computadora, sincronizados de forma privada.</p></div>
         </div>
       </section>
@@ -259,6 +246,7 @@ export default function HomePage() {
           <a href="/soporte">Soporte</a>
           <a href="/privacidad">Privacidad</a>
           <a href="mailto:hola@sobres-app.com">Contacto</a>
+          <a href="/en" hrefLang="en" lang="en">English</a>
         </div>
         <div className="footer-copy">© 2026 Sobres. Hecho con ♥ en México.</div>
       </footer>

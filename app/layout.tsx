@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "Sobres es la app de presupuesto personal para iPhone basada en el método de sobres. Asigna cada peso a un propósito y toma el control de tus finanzas.",
+  alternates: { languages: { en: "/en" } },
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",

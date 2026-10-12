@@ -16,6 +16,8 @@ const UI = {
     noEncontraste: "¿No encontraste lo que buscabas? Escríbenos a",
     hecho: "Hecho con ♥ en México",
     privacidad: "Privacidad",
+    urlPrivacidad: "/privacidad",
+    urlSitio: "/",
     otroIdioma: "English",
     otroIdiomaLargo: "Read this page in English",
   },
@@ -29,6 +31,8 @@ const UI = {
     noEncontraste: "Didn't find what you were looking for? Write to us at",
     hecho: "Made with ♥ in Mexico",
     privacidad: "Privacy",
+    urlPrivacidad: "/en/privacy",
+    urlSitio: "/en",
     otroIdioma: "Español",
     otroIdiomaLargo: "Leer esta página en español",
   },
@@ -86,7 +90,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           >
             {ui.otroIdioma}
           </Link>
-          <Link href="/" className="hide-sm">{ui.sitio}</Link>
+          <Link href={ui.urlSitio} className="hide-sm">{ui.sitio}</Link>
           <a href="mailto:hola@sobres-app.com">{ui.contacto}</a>
         </div>
       </header>
@@ -142,7 +146,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             {ui.noEncontraste}{" "}
             <a href="mailto:hola@sobres-app.com">hola@sobres-app.com</a>.
             <br />© 2026 Sobres · {ui.hecho} ·{" "}
-            <Link href="/privacidad">{ui.privacidad}</Link>
+            <Link href={ui.urlPrivacidad}>{ui.privacidad}</Link>
           </footer>
         </main>
       </div>

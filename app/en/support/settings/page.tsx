@@ -67,12 +67,12 @@ export default function Settings() {
         local mode by signing out.
       </p>
       <Callout type="good">
-        <p>All the details about what is stored and where are in the <Link href="/privacidad">Privacy Policy</Link> (in Spanish).</p>
+        <p>All the details about what is stored and where are in the <Link href="/en/privacy">Privacy Policy</Link>.</p>
       </Callout>
 
       <h2 id="delete">Deleting your account</h2>
       <p>
-        In <strong>Settings → Account → Delete account</strong> you can permanently delete your
+        In <strong>Settings → Account → Delete account</strong> (on the web, <strong>Settings → Danger zone</strong>) you can permanently delete your
         user and <strong>all your data</strong>, both on the server and the local copy. This action
         is <strong>irreversible</strong>.
       </p>

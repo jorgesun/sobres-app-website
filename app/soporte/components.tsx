@@ -8,6 +8,7 @@ const UI = {
   es: {
     ruta: "Ruta de navegación",
     inicio: "Inicio",
+    urlInicio: "/",
     soporte: "Soporte",
     lectura: "de lectura",
     marca: "Sobres · Presupuesto Personal",
@@ -21,6 +22,7 @@ const UI = {
   en: {
     ruta: "Breadcrumb",
     inicio: "Home",
+    urlInicio: "/en",
     soporte: "Support",
     lectura: "read",
     marca: "Sobres · Personal Budget",
@@ -39,7 +41,7 @@ export function Breadcrumb({ title, lang = "es" }: { title: string; lang?: Lang 
   const ui = UI[lang];
   return (
     <nav className="sop-breadcrumb" aria-label={ui.ruta}>
-      <Link href="/">{ui.inicio}</Link>
+      <Link href={ui.urlInicio}>{ui.inicio}</Link>
       <span className="sep">›</span>
       <Link href={hubFor(lang).slug}>{ui.soporte}</Link>
       <span className="sep">›</span>

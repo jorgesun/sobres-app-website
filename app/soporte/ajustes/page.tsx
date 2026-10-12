@@ -69,7 +69,7 @@ export default function Ajustes() {
 
       <h2 id="eliminar">Eliminar tu cuenta</h2>
       <p>
-        En <strong>Ajustes → Cuenta → Eliminar cuenta</strong> puedes borrar de forma permanente tu
+        En <strong>Ajustes → Cuenta → Eliminar cuenta</strong> (en la web, <strong>Ajustes → Zona de peligro</strong>) puedes borrar de forma permanente tu
         usuario y <strong>todos tus datos</strong>, tanto en el servidor como la copia local. La acción
         es <strong>irreversible</strong>.
       </p>

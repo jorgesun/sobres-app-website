@@ -1,15 +1,47 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { itemBySlug, neighbors, HUB } from "./nav";
+import { hubFor, itemBySlug, langOf, neighbors, HUB, type Lang } from "./nav";
+
+/* ---------- Textos fijos de las piezas, por idioma ---------- */
+
+const UI = {
+  es: {
+    ruta: "Ruta de navegación",
+    inicio: "Inicio",
+    soporte: "Soporte",
+    lectura: "de lectura",
+    marca: "Sobres · Presupuesto Personal",
+    enEstaPagina: "En esta página",
+    continuar: "Continuar leyendo",
+    anterior: "← Anterior",
+    siguiente: "Siguiente →",
+    ejemplo: "Ejemplo en pesos",
+    captura: "captura",
+  },
+  en: {
+    ruta: "Breadcrumb",
+    inicio: "Home",
+    soporte: "Support",
+    lectura: "read",
+    marca: "Sobres · Personal Budget",
+    enEstaPagina: "On this page",
+    continuar: "Keep reading",
+    anterior: "← Previous",
+    siguiente: "Next →",
+    ejemplo: "Example",
+    captura: "screenshot",
+  },
+} satisfies Record<Lang, Record<string, string>>;
 
 /* ---------- Page scaffolding ---------- */
 
-export function Breadcrumb({ title }: { title: string }) {
+export function Breadcrumb({ title, lang = "es" }: { title: string; lang?: Lang }) {
+  const ui = UI[lang];
   return (
-    <nav className="sop-breadcrumb" aria-label="Ruta de navegación">
-      <Link href="/">Inicio</Link>
+    <nav className="sop-breadcrumb" aria-label={ui.ruta}>
+      <Link href="/">{ui.inicio}</Link>
       <span className="sep">›</span>
-      <Link href="/soporte">Soporte</Link>
+      <Link href={hubFor(lang).slug}>{ui.soporte}</Link>
       <span className="sep">›</span>
       <span aria-current="page">{title}</span>
     </nav>
@@ -25,25 +57,33 @@ export function PageHeader({
 }) {
   const item = itemBySlug(slug);
   const title = item?.title ?? "";
+  const lang = langOf(slug);
+  const ui = UI[lang];
   return (
     <header>
-      <Breadcrumb title={title} />
+      <Breadcrumb title={title} lang={lang} />
       <h1 className="sop-h1">
         {item?.icon} {title}
       </h1>
       <div className="sop-meta">
-        <span className="pill">⏱️ {item?.read} de lectura</span>
-        <span className="pill">Sobres · Presupuesto Personal</span>
+        <span className="pill">⏱️ {item?.read} {ui.lectura}</span>
+        <span className="pill">{ui.marca}</span>
       </div>
       <p className="sop-lead">{lead}</p>
     </header>
   );
 }
 
-export function Toc({ items }: { items: { id: string; label: string }[] }) {
+export function Toc({
+  items,
+  lang = "es",
+}: {
+  items: { id: string; label: string }[];
+  lang?: Lang;
+}) {
   return (
     <div className="sop-toc">
-      <h4>En esta página</h4>
+      <h4>{UI[lang].enEstaPagina}</h4>
       <ul>
         {items.map((it) => (
           <li key={it.id}>
@@ -57,11 +97,12 @@ export function Toc({ items }: { items: { id: string; label: string }[] }) {
 
 export function PrevNext({ slug }: { slug: string }) {
   const { prev, next } = neighbors(slug);
+  const ui = UI[langOf(slug)];
   return (
-    <nav className="sop-prevnext" aria-label="Continuar leyendo">
+    <nav className="sop-prevnext" aria-label={ui.continuar}>
       {prev ? (
         <Link href={prev.slug}>
-          <div className="dir">← Anterior</div>
+          <div className="dir">{ui.anterior}</div>
           <div className="t">{prev.icon} {prev.title}</div>
         </Link>
       ) : (
@@ -69,7 +110,7 @@ export function PrevNext({ slug }: { slug: string }) {
       )}
       {next ? (
         <Link href={next.slug} className="next">
-          <div className="dir">Siguiente →</div>
+          <div className="dir">{ui.siguiente}</div>
           <div className="t">{next.icon} {next.title}</div>
         </Link>
       ) : (
@@ -82,23 +123,33 @@ export function PrevNext({ slug }: { slug: string }) {
 /* ---------- Callouts ---------- */
 
 type CalloutType = "tip" | "warn" | "good" | "whatif";
-const CALLOUT_META: Record<CalloutType, { icon: string; label: string }> = {
-  tip: { icon: "💡", label: "Tip" },
-  warn: { icon: "⚠️", label: "Cuidado" },
-  good: { icon: "✅", label: "Buena práctica" },
-  whatif: { icon: "❓", label: "¿Y si…?" },
+const CALLOUT_META: Record<Lang, Record<CalloutType, { icon: string; label: string }>> = {
+  es: {
+    tip: { icon: "💡", label: "Tip" },
+    warn: { icon: "⚠️", label: "Cuidado" },
+    good: { icon: "✅", label: "Buena práctica" },
+    whatif: { icon: "❓", label: "¿Y si…?" },
+  },
+  en: {
+    tip: { icon: "💡", label: "Tip" },
+    warn: { icon: "⚠️", label: "Careful" },
+    good: { icon: "✅", label: "Good practice" },
+    whatif: { icon: "❓", label: "What if…?" },
+  },
 };
 
 export function Callout({
   type = "tip",
   title,
   children,
+  lang = "es",
 }: {
   type?: CalloutType;
   title?: string;
   children: ReactNode;
+  lang?: Lang;
 }) {
-  const meta = CALLOUT_META[type];
+  const meta = CALLOUT_META[lang][type];
   return (
     <div className={`callout ${type}`}>
       <span className="cico" aria-hidden>{meta.icon}</span>
@@ -112,10 +163,18 @@ export function Callout({
 
 /* ---------- Money example ---------- */
 
-export function Money({ label = "Ejemplo en pesos", children }: { label?: string; children: ReactNode }) {
+export function Money({
+  label,
+  children,
+  lang = "es",
+}: {
+  label?: string;
+  children: ReactNode;
+  lang?: Lang;
+}) {
   return (
     <div className="money">
-      <div className="mlabel">💵 {label}</div>
+      <div className="mlabel">💵 {label ?? UI[lang].ejemplo}</div>
       {children}
     </div>
   );
@@ -214,8 +273,8 @@ export function SopCard({
 
 /* ---------- Misc ---------- */
 
-export function Shot({ label }: { label: string }) {
-  return <div className="sop-shot">📸 [captura: {label}]</div>;
+export function Shot({ label, lang = "es" }: { label: string; lang?: Lang }) {
+  return <div className="sop-shot">📸 [{UI[lang].captura}: {label}]</div>;
 }
 
 export function Screenshot({

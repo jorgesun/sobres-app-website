@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   },
   description:
     "Aprende a usar Sobres paso a paso y entiende cómo se mueve tu dinero: sin asignar, sobres, disponible, tarjetas de crédito, metas y más.",
+  alternates: { languages: { en: "/en/support" } },
 };
 
 export default function SoporteLayout({

@@ -38,7 +38,7 @@ export default function PreguntasFrecuentes() {
           <p>No. Puedes elegir <em>&quot;Continuar sin cuenta&quot;</em> y usar todo en <strong>modo local</strong>, con tus datos guardados solo en tu iPhone. La cuenta es opcional y sirve para sincronizar entre dispositivos.</p>
         </Faq>
         <Faq q="¿En qué dispositivos funciona?">
-          <p>Sobres es una app para iPhone. Con una cuenta, tus datos se sincronizan entre tus dispositivos iOS.</p>
+          <p>Sobres es una app para iPhone y también funciona en tu navegador, en <a href="https://app.sobres-app.com">app.sobres-app.com</a>. Con una cuenta, tus datos se sincronizan entre los dos.</p>
         </Faq>
         <Faq q="¿Por dónde empiezo?">
           <p>Por la guía <Link href="/soporte/empieza-aqui">Empieza aquí</Link> y luego <Link href="/soporte/flujo-del-dinero">Cómo se mueve tu dinero</Link>. Con esas dos entiendes el 90% de la app.</p>
@@ -62,8 +62,8 @@ export default function PreguntasFrecuentes() {
         <Faq q="¿Cómo funcionan las tarjetas de crédito?">
           <p>Cada tarjeta tiene un sobre de pago. Al gastar con ella desde un sobre con fondos, ese dinero se <strong>reserva</strong> para pagar la tarjeta. Todo el detalle en <Link href="/soporte/tarjetas-de-credito">Tarjetas de crédito</Link>.</p>
         </Faq>
-        <Faq q="¿Puedo llevar cuentas en dólares?">
-          <p>Sí, la app soporta multimoneda (MXN/USD). Se activa en <Link href="/soporte/ajustes">Ajustes</Link>.</p>
+        <Faq q="¿Puedo llevar cuentas en otra moneda?">
+          <p>Sí. Tu presupuesto tiene su moneda y cada cuenta puede llevar una distinta; los montos se convierten a la del presupuesto. Ver <Link href="/soporte/ajustes">Ajustes</Link>.</p>
         </Faq>
       </div>
 

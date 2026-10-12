@@ -36,7 +36,8 @@ export default function Ajustes() {
         <li><strong>Tema claro / oscuro</strong> — la apariencia de la app.</li>
         <li><strong>Bloqueo con Face ID / Touch ID</strong> — pide tu rostro o huella para abrir la app.</li>
         <li><strong>Modo privacidad</strong> — oculta todos los montos con un toque, ideal para usar la app en público.</li>
-        <li><strong>Multimoneda (MXN / USD)</strong> — para manejar cuentas en otra moneda.</li>
+        <li><strong>Multimoneda</strong> — tu presupuesto tiene su moneda, y cada cuenta puede llevar otra.</li>
+        <li><strong>Idioma</strong> — español o inglés.</li>
         <li><strong>Exportar / importar datos</strong> — respaldo en JSON o transacciones en CSV.</li>
         <li><strong>Sincronización</strong> — activa el respaldo entre dispositivos si tienes cuenta.</li>
         <li><strong>Eliminar cuenta</strong> — borra tu cuenta y todos tus datos.</li>

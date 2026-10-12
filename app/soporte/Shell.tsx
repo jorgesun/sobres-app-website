@@ -3,12 +3,45 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAV, HUB } from "./nav";
+import { counterpart, hubFor, langOf, navFor, type Lang } from "./nav";
+
+const UI = {
+  es: {
+    abrir: "Abrir menú",
+    soporte: "Soporte",
+    sitio: "← Sitio principal",
+    contacto: "Contacto",
+    buscar: "Buscar en la ayuda…",
+    sinResultados: (q: string) => `Sin resultados para “${q}”.`,
+    noEncontraste: "¿No encontraste lo que buscabas? Escríbenos a",
+    hecho: "Hecho con ♥ en México",
+    privacidad: "Privacidad",
+    otroIdioma: "English",
+    otroIdiomaLargo: "Read this page in English",
+  },
+  en: {
+    abrir: "Open menu",
+    soporte: "Support",
+    sitio: "← Main site",
+    contacto: "Contact",
+    buscar: "Search help…",
+    sinResultados: (q: string) => `No results for “${q}”.`,
+    noEncontraste: "Didn't find what you were looking for? Write to us at",
+    hecho: "Made with ♥ in Mexico",
+    privacidad: "Privacy",
+    otroIdioma: "Español",
+    otroIdiomaLargo: "Leer esta página en español",
+  },
+} satisfies Record<Lang, Record<string, unknown>>;
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
+  const lang = langOf(pathname);
+  const ui = UI[lang];
+  const NAV = navFor(lang);
+  const HUB = hubFor(lang);
 
   const groups = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -21,31 +54,40 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           it.desc.toLowerCase().includes(needle),
       ),
     })).filter((g) => g.items.length > 0);
-  }, [q]);
+  }, [q, NAV]);
 
-  const isActive = (slug: string) =>
-    slug === "/soporte" ? pathname === "/soporte" : pathname === slug;
+  const isActive = (slug: string) => pathname === slug;
 
+  // `lang` en el contenedor: el `<html>` de la landing es español, y sin esto un
+  // lector de pantalla leería la ayuda en inglés con pronunciación española.
   return (
-    <div className={`soporte${open ? " menu-open" : ""}`}>
+    <div className={`soporte${open ? " menu-open" : ""}`} lang={lang}>
       <header className="sop-header">
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <button
             className="sop-burger"
-            aria-label="Abrir menú"
+            aria-label={ui.abrir}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? "✕" : "☰"}
           </button>
-          <Link href="/soporte" className="brand">
+          <Link href={HUB.slug} className="brand">
             <img src="/icon.png" alt="" />
-            <span>Sobres <small>· Soporte</small></span>
+            <span>Sobres <small>· {ui.soporte}</small></span>
           </Link>
         </div>
         <div className="header-actions">
-          <Link href="/" className="hide-sm">← Sitio principal</Link>
-          <a href="mailto:hola@sobres-app.com">Contacto</a>
+          <Link
+            href={counterpart(pathname)}
+            hrefLang={lang === "es" ? "en" : "es"}
+            lang={lang === "es" ? "en" : "es"}
+            aria-label={ui.otroIdiomaLargo}
+          >
+            {ui.otroIdioma}
+          </Link>
+          <Link href="/" className="hide-sm">{ui.sitio}</Link>
+          <a href="mailto:hola@sobres-app.com">{ui.contacto}</a>
         </div>
       </header>
 
@@ -54,7 +96,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           <input
             className="sop-search"
             type="search"
-            placeholder="Buscar en la ayuda…"
+            placeholder={ui.buscar}
             value={q}
             onChange={(e) => setQ(e.target.value)}
             onClick={(e) => e.stopPropagation()}
@@ -87,7 +129,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           ))}
           {groups.length === 0 && (
             <p className="muted" style={{ padding: "0 8px", fontSize: 14 }}>
-              Sin resultados para “{q}”.
+              {ui.sinResultados(q)}
             </p>
           )}
         </aside>
@@ -97,10 +139,10 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         <main className="sop-content">
           <article className="sop-article">{children}</article>
           <footer className="sop-footer">
-            ¿No encontraste lo que buscabas? Escríbenos a{" "}
+            {ui.noEncontraste}{" "}
             <a href="mailto:hola@sobres-app.com">hola@sobres-app.com</a>.
-            <br />© 2026 Sobres · Hecho con ♥ en México ·{" "}
-            <Link href="/privacidad">Privacidad</Link>
+            <br />© 2026 Sobres · {ui.hecho} ·{" "}
+            <Link href="/privacidad">{ui.privacidad}</Link>
           </footer>
         </main>
       </div>
